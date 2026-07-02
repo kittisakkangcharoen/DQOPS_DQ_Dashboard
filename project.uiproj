@@ -1,0 +1,6 @@
+{
+  "Name": "DQOPS_DQ_Dashboard",
+  "ProjectType": "Process",
+  "Description": "DQOPS_DQ_Dashboard",
+  "MainFile": "Main.xaml"
+}

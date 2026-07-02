@@ -1,0 +1,700 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Generate_fact_TotalKDEs" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Generate_fact_TotalKDEs_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Microsoft.Win32.SafeHandles</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Configuration.Assemblies</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.CodeDom.Compiler</x:String>
+      <x:String>System.Buffers</x:String>
+      <x:String>System.Buffers.Text</x:String>
+      <x:String>System.Buffers.Binary</x:String>
+      <x:String>System.Threading</x:String>
+      <x:String>System.Threading.Tasks</x:String>
+      <x:String>System.Threading.Tasks.Sources</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Text.Unicode</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Security.Principal</x:String>
+      <x:String>System.Security.Permissions</x:String>
+      <x:String>System.Security.Cryptography</x:String>
+      <x:String>System.Runtime</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Runtime.Remoting</x:String>
+      <x:String>System.Runtime.ExceptionServices</x:String>
+      <x:String>System.Runtime.ConstrainedExecution</x:String>
+      <x:String>System.Runtime.Versioning</x:String>
+      <x:String>System.Runtime.Loader</x:String>
+      <x:String>System.Runtime.Intrinsics</x:String>
+      <x:String>System.Runtime.Intrinsics.Wasm</x:String>
+      <x:String>System.Runtime.Intrinsics.Arm</x:String>
+      <x:String>System.Runtime.Intrinsics.X86</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.InteropServices.ObjectiveC</x:String>
+      <x:String>System.Runtime.InteropServices.Marshalling</x:String>
+      <x:String>System.Runtime.InteropServices.ComTypes</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
+      <x:String>System.Resources</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Reflection.Metadata</x:String>
+      <x:String>System.Reflection.Emit</x:String>
+      <x:String>System.IO.Enumeration</x:String>
+      <x:String>System.Diagnostics.SymbolStore</x:String>
+      <x:String>System.Diagnostics.Contracts</x:String>
+      <x:String>System.Diagnostics.CodeAnalysis</x:String>
+      <x:String>System.Diagnostics.Tracing</x:String>
+      <x:String>System.Collections.Concurrent</x:String>
+      <x:String>Internal</x:String>
+      <x:String>System.CodeDom</x:String>
+      <x:String>Microsoft.CSharp</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Linq.Expressions.Interpreter</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel.Design.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Security.Authentication.ExtendedProtection</x:String>
+      <x:String>System.Timers</x:String>
+      <x:String>System.ComponentModel.Design</x:String>
+      <x:String>System.Xml.Schema</x:String>
+      <x:String>System.Xml.Xsl</x:String>
+      <x:String>System.Xml.Xsl.Runtime</x:String>
+      <x:String>System.Xml.XPath</x:String>
+      <x:String>System.Xml.Resolvers</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.CodeAnalysis</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic.Syntax</x:String>
+      <x:String>Microsoft.VisualBasic.FileIO</x:String>
+      <x:String>System.Security.Authentication</x:String>
+      <x:String>System.Net.Cache</x:String>
+      <x:String>System.Net.NetworkInformation</x:String>
+      <x:String>System.Net.Security</x:String>
+      <x:String>System.Net.Sockets</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Excel.Model</x:String>
+      <x:String>UiPath.Excel.Activities.Business.Filter</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography</AssemblyReference>
+      <AssemblyReference>System.Security.Principal.Windows</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.IO.MemoryMappedFiles</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Registry</AssemblyReference>
+      <AssemblyReference>System.IO.Pipes</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Threading.AccessControl</AssemblyReference>
+      <AssemblyReference>System.Threading</AssemblyReference>
+      <AssemblyReference>System.Threading.Tasks.Parallel</AssemblyReference>
+      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
+      <AssemblyReference>System.Text.Encodings.Web</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Security.Claims</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.Pkcs</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.ProtectedData</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Resources.Writer</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.StackTrace</AssemblyReference>
+      <AssemblyReference>System.Collections.Concurrent</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Net.Security</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xml.XPath.XDocument</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Net.NetworkInformation</AssemblyReference>
+      <AssemblyReference>System.Net.Ping</AssemblyReference>
+      <AssemblyReference>System.Net.Sockets</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="read data from excel" DisplayName="Generate_fact_TotalKDEs" sap:VirtualizedContainerService.HintSize="1011,3740" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_cleanedData" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_unmeasurableKDE" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_measurableKDE" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_actualMeasurableKDE" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_KDE_withDQError" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_KDE_withoutDQError" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="Sequence Read latest raw data" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_ExcelData" />
+        <Variable x:TypeArguments="x:String" Name="latestDataFile" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[latestDataFile]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">["20260601 DQ Measurement Result.xlsx"]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Read latest data from file: &quot; + latestDataFile]" />
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_ExcelData]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="20260601 Invalid Data" WorkbookPath="[&quot;Downloaded\&quot; + latestDataFile]" />
+      <ui:FilterDataTable DataTable="[dt_ExcelData]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,186" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_cleanedData]" SelectColumnsMode="Keep">
+        <ui:FilterDataTable.Filters>
+          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+            <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+            </ui:FilterOperationArgument>
+            <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+            </ui:FilterOperationArgument>
+          </scg:List>
+        </ui:FilterDataTable.Filters>
+        <ui:FilterDataTable.SelectColumns>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+            <InArgument x:TypeArguments="x:String">["Status Jun"]</InArgument>
+            <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+          </scg:List>
+        </ui:FilterDataTable.SelectColumns>
+      </ui:FilterDataTable>
+    </Sequence>
+    <Sequence DisplayName="Sequence - Generate KDE with status" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="Sequence_4">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_ExcelData" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_KDE_byStatus" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Generating KDE by status . . .&quot;]" />
+      <ui:RemoveDuplicateRows DataTable="[dt_cleanedData]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_2" OutputDataTable="[dt_KDE_byStatus]" />
+      <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_KDE_byStatus_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
+        <ueab:ExcelApplicationCard.Body>
+          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,281" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_3" IgnoreEmptySource="False" Source="[dt_KDE_byStatus]" />
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelApplicationCard.Body>
+      </ueab:ExcelApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="Sequence - Unmeasurable KDE" sap:VirtualizedContainerService.HintSize="486,890" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:FilterDataTable DataTable="[dt_cleanedData]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_5" OutputDataTable="[dt_unmeasurableKDE]" SelectColumnsMode="Keep">
+        <ui:FilterDataTable.Filters>
+          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+            <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+            </ui:FilterOperationArgument>
+            <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+            </ui:FilterOperationArgument>
+            <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["Status Jun"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+              <ui:FilterOperationArgument.Operand>
+                <InArgument x:TypeArguments="x:String">["Cannot be measured"]</InArgument>
+              </ui:FilterOperationArgument.Operand>
+            </ui:FilterOperationArgument>
+          </scg:List>
+        </ui:FilterDataTable.Filters>
+        <ui:FilterDataTable.SelectColumns>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+            <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+          </scg:List>
+        </ui:FilterDataTable.SelectColumns>
+      </ui:FilterDataTable>
+      <ui:RemoveDuplicateRows DataTable="[dt_unmeasurableKDE]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_5" OutputDataTable="[dt_unmeasurableKDE]" />
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Category" DataTable="[dt_unmeasurableKDE]" DefaultValue="[&quot;Cannot be measured&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="416,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" />
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LastUpdated" DataTable="[dt_unmeasurableKDE]" DefaultValue="[DateTime.Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="416,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
+      <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_5" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_unmeasurableKDE_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
+        <ueab:ExcelApplicationCard.Body>
+          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,281" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_5" IgnoreEmptySource="False" Source="[dt_unmeasurableKDE]" />
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelApplicationCard.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ueab:ExcelApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="Sequence - Measurable KDE" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="Sequence_9">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:FilterDataTable DataTable="[dt_cleanedData]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" OutputDataTable="[dt_measurableKDE]" SelectColumnsMode="Keep">
+        <ui:FilterDataTable.Filters>
+          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+            <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+            </ui:FilterOperationArgument>
+            <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+            </ui:FilterOperationArgument>
+            <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTEQ">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["Status Jun"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+              <ui:FilterOperationArgument.Operand>
+                <InArgument x:TypeArguments="x:String">["Cannot be measured"]</InArgument>
+              </ui:FilterOperationArgument.Operand>
+            </ui:FilterOperationArgument>
+          </scg:List>
+        </ui:FilterDataTable.Filters>
+        <ui:FilterDataTable.SelectColumns>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+            <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+            <InArgument x:TypeArguments="x:String">["Status Jun"]</InArgument>
+          </scg:List>
+        </ui:FilterDataTable.SelectColumns>
+      </ui:FilterDataTable>
+      <ui:RemoveDuplicateRows DataTable="[dt_measurableKDE]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_6" OutputDataTable="[dt_measurableKDE]" />
+      <ui:JoinDataTables DataTable1="[dt_measurableKDE]" DataTable2="[dt_unmeasurableKDE]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="416,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[dt_actualMeasurableKDE]">
+        <ui:JoinDataTables.Arguments>
+          <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+            <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+              <ui:JoinOperationArgument.Column1>
+                <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+              </ui:JoinOperationArgument.Column1>
+              <ui:JoinOperationArgument.Column2>
+                <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+              </ui:JoinOperationArgument.Column2>
+            </ui:JoinOperationArgument>
+            <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+              <ui:JoinOperationArgument.Column1>
+                <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+              </ui:JoinOperationArgument.Column1>
+              <ui:JoinOperationArgument.Column2>
+                <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+              </ui:JoinOperationArgument.Column2>
+            </ui:JoinOperationArgument>
+          </scg:List>
+        </ui:JoinDataTables.Arguments>
+      </ui:JoinDataTables>
+      <ui:FilterDataTable DataTable="[dt_actualMeasurableKDE]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_7" OutputDataTable="[dt_actualMeasurableKDE]" SelectColumnsMode="Keep">
+        <ui:FilterDataTable.Filters>
+          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+            <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:Int32">[(4)]</InArgument>
+              </ui:FilterOperationArgument.Column>
+            </ui:FilterOperationArgument>
+          </scg:List>
+        </ui:FilterDataTable.Filters>
+        <ui:FilterDataTable.SelectColumns>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+            <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+            <InArgument x:TypeArguments="x:String">["Status Jun"]</InArgument>
+          </scg:List>
+        </ui:FilterDataTable.SelectColumns>
+      </ui:FilterDataTable>
+      <ui:RemoveDuplicateRows DataTable="[dt_actualMeasurableKDE]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_4" OutputDataTable="[dt_actualMeasurableKDE]" />
+      <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_7" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_actualMeasurableKDE_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
+        <ueab:ExcelApplicationCard.Body>
+          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,281" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_4" IgnoreEmptySource="False" Source="[dt_actualMeasurableKDE]" />
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelApplicationCard.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ueab:ExcelApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="Sequence - KDE with DQ Error" sap:VirtualizedContainerService.HintSize="486,890" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:FilterDataTable DataTable="[dt_actualMeasurableKDE]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_8" OutputDataTable="[dt_KDE_withDQError]" SelectColumnsMode="Keep">
+        <ui:FilterDataTable.Filters>
+          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+            <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTEQ">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:Int32">[(2)]</InArgument>
+              </ui:FilterOperationArgument.Column>
+              <ui:FilterOperationArgument.Operand>
+                <InArgument x:TypeArguments="x:String">["Pass"]</InArgument>
+              </ui:FilterOperationArgument.Operand>
+            </ui:FilterOperationArgument>
+          </scg:List>
+        </ui:FilterDataTable.Filters>
+        <ui:FilterDataTable.SelectColumns>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+            <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+          </scg:List>
+        </ui:FilterDataTable.SelectColumns>
+      </ui:FilterDataTable>
+      <ui:RemoveDuplicateRows DataTable="[dt_KDE_withDQError]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_7" OutputDataTable="[dt_KDE_withDQError]" />
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Category" DataTable="[dt_KDE_withDQError]" DefaultValue="[&quot;Invalid KDE (DQ Error found)&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="416,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LastUpdated" DataTable="[dt_KDE_withDQError]" DefaultValue="[DateTime.Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="416,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6" />
+      <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_8" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_KDE_withDQError_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
+        <ueab:ExcelApplicationCard.Body>
+          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,281" sap2010:WorkflowViewState.IdRef="Sequence_16">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_7" IgnoreEmptySource="False" Source="[dt_KDE_withDQError]" />
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelApplicationCard.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ueab:ExcelApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="Sequence - KDE without DQ Error" sap:VirtualizedContainerService.HintSize="486,1630" sap2010:WorkflowViewState.IdRef="Sequence_13">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:FilterDataTable DataTable="[dt_actualMeasurableKDE]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_9" OutputDataTable="[dt_KDE_withoutDQError]" SelectColumnsMode="Keep">
+        <ui:FilterDataTable.Filters>
+          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+            <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:Int32">[(2)]</InArgument>
+              </ui:FilterOperationArgument.Column>
+              <ui:FilterOperationArgument.Operand>
+                <InArgument x:TypeArguments="x:String">["Pass"]</InArgument>
+              </ui:FilterOperationArgument.Operand>
+            </ui:FilterOperationArgument>
+          </scg:List>
+        </ui:FilterDataTable.Filters>
+        <ui:FilterDataTable.SelectColumns>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+            <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+          </scg:List>
+        </ui:FilterDataTable.SelectColumns>
+      </ui:FilterDataTable>
+      <ui:JoinDataTables DataTable1="[dt_KDE_withoutDQError]" DataTable2="[dt_KDE_withDQError]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="452,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_2" JoinType="Left" OutputDataTable="[dt_KDE_withoutDQError]">
+        <ui:JoinDataTables.Arguments>
+          <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+            <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+              <ui:JoinOperationArgument.Column1>
+                <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+              </ui:JoinOperationArgument.Column1>
+              <ui:JoinOperationArgument.Column2>
+                <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+              </ui:JoinOperationArgument.Column2>
+            </ui:JoinOperationArgument>
+            <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+              <ui:JoinOperationArgument.Column1>
+                <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+              </ui:JoinOperationArgument.Column1>
+              <ui:JoinOperationArgument.Column2>
+                <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+              </ui:JoinOperationArgument.Column2>
+            </ui:JoinOperationArgument>
+          </scg:List>
+        </ui:JoinDataTables.Arguments>
+      </ui:JoinDataTables>
+      <ui:FilterDataTable DataTable="[dt_KDE_withoutDQError]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_10" OutputDataTable="[dt_KDE_withoutDQError]" SelectColumnsMode="Keep">
+        <ui:FilterDataTable.Filters>
+          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+            <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:Int32">[(2)]</InArgument>
+              </ui:FilterOperationArgument.Column>
+            </ui:FilterOperationArgument>
+          </scg:List>
+        </ui:FilterDataTable.Filters>
+        <ui:FilterDataTable.SelectColumns>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+            <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+          </scg:List>
+        </ui:FilterDataTable.SelectColumns>
+      </ui:FilterDataTable>
+      <ui:RemoveDuplicateRows DataTable="[dt_KDE_withoutDQError]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_8" OutputDataTable="[dt_KDE_withoutDQError]" />
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Category" DataTable="[dt_KDE_withoutDQError]" DefaultValue="[&quot;Valid KDE (no DQ error found)&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+      <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LastUpdated" DataTable="[dt_KDE_withoutDQError]" DefaultValue="[DateTime.Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7" />
+      <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_6" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_KDE_withoutDQError_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
+        <ueab:ExcelApplicationCard.Body>
+          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,281" sap2010:WorkflowViewState.IdRef="Sequence_14">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;A1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_6" IgnoreEmptySource="False" Source="[dt_KDE_withoutDQError]" />
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelApplicationCard.Body>
+      </ueab:ExcelApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="Sequence - Generate Total KDE" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_totalKDE" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Generating total KDE . . .&quot;]" />
+      <ui:FilterDataTable DataTable="[dt_cleanedData]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dt_totalKDE]" SelectColumnsMode="Keep">
+        <ui:FilterDataTable.Filters>
+          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+            <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+            </ui:FilterOperationArgument>
+            <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
+              <ui:FilterOperationArgument.Column>
+                <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+              </ui:FilterOperationArgument.Column>
+            </ui:FilterOperationArgument>
+          </scg:List>
+        </ui:FilterDataTable.Filters>
+        <ui:FilterDataTable.SelectColumns>
+          <scg:List x:TypeArguments="InArgument" Capacity="4">
+            <InArgument x:TypeArguments="x:String">["Data Domain"]</InArgument>
+            <InArgument x:TypeArguments="x:String">["KDE"]</InArgument>
+          </scg:List>
+        </ui:FilterDataTable.SelectColumns>
+      </ui:FilterDataTable>
+      <ui:RemoveDuplicateRows DataTable="[dt_totalKDE]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_3" OutputDataTable="[dt_totalKDE]" />
+      <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_TotalKDEs_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
+        <ueab:ExcelApplicationCard.Body>
+          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,281" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False" Source="[dt_totalKDE]" />
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelApplicationCard.Body>
+      </ueab:ExcelApplicationCard>
+    </Sequence>
+    <Sequence DisplayName="Sequence Aggreate by Category" sap:VirtualizedContainerService.HintSize="486,48" sap2010:WorkflowViewState.IdRef="Sequence_17">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,953" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_9" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_TotalKDE_byCategory_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
+        <ueab:ExcelApplicationCard.Body>
+          <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,733" sap2010:WorkflowViewState.IdRef="Sequence_18">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="WriteRangeX_8" IgnoreEmptySource="False" Source="[dt_KDE_withoutDQError]" />
+              <ueab:WriteRangeX Append="True" Destination="[Excel.Sheet(&quot;Sheet1&quot;)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="WriteRangeX_9" IgnoreEmptySource="False" Source="[dt_KDE_withDQError]" />
+              <ueab:WriteRangeX Append="True" Destination="[Excel.Sheet(&quot;Sheet1&quot;)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_10" IgnoreEmptySource="False" Source="[dt_unmeasurableKDE]" />
+            </Sequence>
+          </ActivityAction>
+        </ueab:ExcelApplicationCard.Body>
+      </ueab:ExcelApplicationCard>
+    </Sequence>
+  </Sequence>
+</Activity>
