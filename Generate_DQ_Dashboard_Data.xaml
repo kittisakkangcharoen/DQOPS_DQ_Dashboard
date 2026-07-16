@@ -97,7 +97,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Generate_DQ_Dashboard_Data" sap:VirtualizedContainerService.HintSize="947,630" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Generate_DQ_Dashboard_Data" sap:VirtualizedContainerService.HintSize="973,603" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KDEHeader" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_IDQMappingRepo" />
@@ -117,6 +117,8 @@
       <Variable x:TypeArguments="x:String" Name="fileName" />
       <Variable x:TypeArguments="x:String" Name="localFilePath" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_measurableKDEX" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_PassedChecks" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_KDE_withoutDQErrorX" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -281,7 +283,7 @@
                           <av:PointCollection x:Key="ConnectorLocation">460,255 460,285 105,285 105,390 135,390</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Generate KDE DQ Results Fact" sap:VirtualizedContainerService.HintSize="486,1023" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence DisplayName="Generate KDE DQ Results Fact" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -332,7 +334,7 @@
                             </scg:List>
                           </ui:FilterDataTable.SelectColumns>
                         </ui:FilterDataTable>
-                        <ueab:ExcelApplicationCard AutoSave="False" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_KDE_DQ_Results_&quot; + Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
+                        <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_KDE_DQ_Results_&quot; + Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
                           <ueab:ExcelApplicationCard.Body>
                             <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                               <ActivityAction.Argument>
@@ -490,7 +492,7 @@
                                     </scg:List>
                                   </ui:JoinDataTables.Arguments>
                                 </ui:JoinDataTables>
-                                <ui:FilterDataTable DataTable="[dt_measurableKDEX]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_8" OutputDataTable="[dt_MeasurableKDEX]" SelectColumnsMode="Keep">
+                                <ui:FilterDataTable DataTable="[dt_measurableKDEX]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_9" OutputDataTable="[dt_MeasurableKDEX]" SelectColumnsMode="Keep">
                                   <ui:FilterDataTable.Filters>
                                     <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                       <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
@@ -507,11 +509,11 @@
                                     </scg:List>
                                   </ui:FilterDataTable.SelectColumns>
                                 </ui:FilterDataTable>
-                                <ui:RemoveDuplicateRows DataTable="[dt_measurableKDEX]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_3" OutputDataTable="[dt_actualMeasurableKDE]" />
+                                <ui:RemoveDuplicateRows DataTable="[dt_measurableKDEX]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_3" OutputDataTable="[dt_measurableKDEX]" />
                                 <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Category" DataTable="[dt_measurableKDE]" DefaultValue="[&quot;Measurable&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_11" />
                                 <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LastUpdated" DataTable="[dt_measurableKDE]" DefaultValue="[DateTime.Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_12" />
-                                <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Category" DataTable="[dt_actualMeasurableKDE]" DefaultValue="[&quot;Measurable&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_13" />
-                                <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LastUpdated" DataTable="[dt_actualMeasurableKDE]" DefaultValue="[DateTime.Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_14" />
+                                <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Category" DataTable="[dt_measurableKDEX]" DefaultValue="[&quot;Measurable&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_15" />
+                                <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LastUpdated" DataTable="[dt_measurableKDEX]" DefaultValue="[DateTime.Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_16" />
                                 <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_4" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_MeasurableKDE_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
                                   <ueab:ExcelApplicationCard.Body>
                                     <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
@@ -552,7 +554,60 @@
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:FilterDataTable DataTable="[dt_KDE_DQ_Results]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_5" OutputDataTable="[dt_KDE_withDQError]" SelectColumnsMode="Keep">
+                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,357" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                                      <ui:CommentOut.Body>
+                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,246" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:FilterDataTable DataTable="[dt_KDE_DQ_Results]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,186" sap2010:WorkflowViewState.IdRef="FilterDataTable_5" OutputDataTable="[dt_KDE_withDQError]" SelectColumnsMode="Keep">
+                                            <ui:FilterDataTable.Filters>
+                                              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                                <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTEQ">
+                                                  <ui:FilterOperationArgument.Column>
+                                                    <InArgument x:TypeArguments="x:String">["ThresholdStatus"]</InArgument>
+                                                  </ui:FilterOperationArgument.Column>
+                                                  <ui:FilterOperationArgument.Operand>
+                                                    <InArgument x:TypeArguments="x:String">["Pass"]</InArgument>
+                                                  </ui:FilterOperationArgument.Operand>
+                                                </ui:FilterOperationArgument>
+                                              </scg:List>
+                                            </ui:FilterDataTable.Filters>
+                                            <ui:FilterDataTable.SelectColumns>
+                                              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                                <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
+                                                <InArgument x:TypeArguments="x:String">["KDENumber"]</InArgument>
+                                              </scg:List>
+                                            </ui:FilterDataTable.SelectColumns>
+                                          </ui:FilterDataTable>
+                                        </Sequence>
+                                      </ui:CommentOut.Body>
+                                    </ui:CommentOut>
+                                    <ui:JoinDataTables DataTable1="[dt_measurableKDEX]" DataTable2="[dt_KDE_DQ_Results]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="486,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_6" JoinType="Left" OutputDataTable="[dt_KDE_withDQError]">
+                                      <ui:JoinDataTables.Arguments>
+                                        <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+                                          <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                                            <ui:JoinOperationArgument.Column1>
+                                              <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
+                                            </ui:JoinOperationArgument.Column1>
+                                            <ui:JoinOperationArgument.Column2>
+                                              <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
+                                            </ui:JoinOperationArgument.Column2>
+                                          </ui:JoinOperationArgument>
+                                          <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                                            <ui:JoinOperationArgument.Column1>
+                                              <InArgument x:TypeArguments="x:String">["KDENumber"]</InArgument>
+                                            </ui:JoinOperationArgument.Column1>
+                                            <ui:JoinOperationArgument.Column2>
+                                              <InArgument x:TypeArguments="x:String">["KDENumber"]</InArgument>
+                                            </ui:JoinOperationArgument.Column2>
+                                          </ui:JoinOperationArgument>
+                                        </scg:List>
+                                      </ui:JoinDataTables.Arguments>
+                                    </ui:JoinDataTables>
+                                    <ui:FilterDataTable DataTable="[dt_KDE_withDQError]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="486,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_10" OutputDataTable="[dt_KDE_withDQError]" SelectColumnsMode="Keep">
                                       <ui:FilterDataTable.Filters>
                                         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                           <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTEQ">
@@ -572,10 +627,10 @@
                                         </scg:List>
                                       </ui:FilterDataTable.SelectColumns>
                                     </ui:FilterDataTable>
-                                    <ui:RemoveDuplicateRows DataTable="[dt_KDE_withDQError]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_4" OutputDataTable="[dt_KDE_withDQError]" />
-                                    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Category" DataTable="[dt_KDE_withDQError]" DefaultValue="[&quot;Invalid KDE (DQ Error found)&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" />
-                                    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LastUpdated" DataTable="[dt_KDE_withDQError]" DefaultValue="[DateTime.Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6" />
-                                    <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_5" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_KDE_withDQError_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
+                                    <ui:RemoveDuplicateRows DataTable="[dt_KDE_withDQError]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="486,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_4" OutputDataTable="[dt_KDE_withDQError]" />
+                                    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Category" DataTable="[dt_KDE_withDQError]" DefaultValue="[&quot;Invalid KDE (DQ Error found)&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="486,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_5" />
+                                    <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LastUpdated" DataTable="[dt_KDE_withDQError]" DefaultValue="[DateTime.Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="486,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_6" />
+                                    <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="486,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_5" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_KDE_withDQError_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
                                       <ueab:ExcelApplicationCard.Body>
                                         <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                                           <ActivityAction.Argument>
@@ -615,27 +670,7 @@
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:FilterDataTable DataTable="[dt_actualMeasurableKDE]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" OutputDataTable="[dt_KDE_withoutDQError]" SelectColumnsMode="Keep">
-                                          <ui:FilterDataTable.Filters>
-                                            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                                              <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
-                                                <ui:FilterOperationArgument.Column>
-                                                  <InArgument x:TypeArguments="x:String">["ThresholdStatus"]</InArgument>
-                                                </ui:FilterOperationArgument.Column>
-                                                <ui:FilterOperationArgument.Operand>
-                                                  <InArgument x:TypeArguments="x:String">["Pass"]</InArgument>
-                                                </ui:FilterOperationArgument.Operand>
-                                              </ui:FilterOperationArgument>
-                                            </scg:List>
-                                          </ui:FilterDataTable.Filters>
-                                          <ui:FilterDataTable.SelectColumns>
-                                            <scg:List x:TypeArguments="InArgument" Capacity="4">
-                                              <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
-                                              <InArgument x:TypeArguments="x:String">["KDENumber"]</InArgument>
-                                            </scg:List>
-                                          </ui:FilterDataTable.SelectColumns>
-                                        </ui:FilterDataTable>
-                                        <ui:JoinDataTables DataTable1="[dt_KDE_withoutDQError]" DataTable2="[dt_KDE_withDQError]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="452,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_4" JoinType="Left" OutputDataTable="[dt_KDE_withoutDQError]">
+                                        <ui:JoinDataTables DataTable1="[dt_KDE_DQ_Results]" DataTable2="[dt_KDE_withDQError]" DisplayName="Join Data Tables - UnmeasurableKDEs" sap:VirtualizedContainerService.HintSize="452,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_4" JoinType="Left" OutputDataTable="[dt_KDE_withoutDQError]">
                                           <ui:JoinDataTables.Arguments>
                                             <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
                                               <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -657,12 +692,39 @@
                                             </scg:List>
                                           </ui:JoinDataTables.Arguments>
                                         </ui:JoinDataTables>
-                                        <ui:FilterDataTable DataTable="[dt_KDE_withoutDQError]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_7" OutputDataTable="[dt_KDE_withoutDQError]" SelectColumnsMode="Keep">
+                                        <ui:JoinDataTables DataTable1="[dt_KDE_withoutDQError]" DataTable2="[dt_unmeasurableKDE]" DisplayName="Join Data Tables - KDE with DQ Error" sap:VirtualizedContainerService.HintSize="452,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_9" JoinType="Left" OutputDataTable="[dt_KDE_withoutDQErrorX]">
+                                          <ui:JoinDataTables.Arguments>
+                                            <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+                                              <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                                                <ui:JoinOperationArgument.Column1>
+                                                  <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
+                                                </ui:JoinOperationArgument.Column1>
+                                                <ui:JoinOperationArgument.Column2>
+                                                  <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
+                                                </ui:JoinOperationArgument.Column2>
+                                              </ui:JoinOperationArgument>
+                                              <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                                                <ui:JoinOperationArgument.Column1>
+                                                  <InArgument x:TypeArguments="x:String">["KDENumber"]</InArgument>
+                                                </ui:JoinOperationArgument.Column1>
+                                                <ui:JoinOperationArgument.Column2>
+                                                  <InArgument x:TypeArguments="x:String">["KDENumber"]</InArgument>
+                                                </ui:JoinOperationArgument.Column2>
+                                              </ui:JoinOperationArgument>
+                                            </scg:List>
+                                          </ui:JoinDataTables.Arguments>
+                                        </ui:JoinDataTables>
+                                        <ui:FilterDataTable DataTable="[dt_KDE_withoutDQErrorX]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_16" OutputDataTable="[dt_KDE_withoutDQErrorX]" SelectColumnsMode="Keep">
                                           <ui:FilterDataTable.Filters>
                                             <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                               <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
                                                 <ui:FilterOperationArgument.Column>
-                                                  <InArgument x:TypeArguments="x:Int32">[(2)]</InArgument>
+                                                  <InArgument x:TypeArguments="x:String">["KDENumber_1"]</InArgument>
+                                                </ui:FilterOperationArgument.Column>
+                                              </ui:FilterOperationArgument>
+                                              <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
+                                                <ui:FilterOperationArgument.Column>
+                                                  <InArgument x:TypeArguments="x:String">["KDENumber_2"]</InArgument>
                                                 </ui:FilterOperationArgument.Column>
                                               </ui:FilterOperationArgument>
                                             </scg:List>
@@ -674,9 +736,9 @@
                                             </scg:List>
                                           </ui:FilterDataTable.SelectColumns>
                                         </ui:FilterDataTable>
-                                        <ui:RemoveDuplicateRows DataTable="[dt_KDE_withoutDQError]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_5" OutputDataTable="[dt_KDE_withoutDQError]" />
-                                        <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Category" DataTable="[dt_KDE_withoutDQError]" DefaultValue="[&quot;Valid KDE (no DQ error found)&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_7" />
-                                        <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LastUpdated" DataTable="[dt_KDE_withoutDQError]" DefaultValue="[DateTime.Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_8" />
+                                        <ui:RemoveDuplicateRows DataTable="[dt_KDE_withoutDQErrorX]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_5" OutputDataTable="[dt_KDE_withoutDQErrorX]" />
+                                        <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Category" DataTable="[dt_KDE_withoutDQErrorX]" DefaultValue="[&quot;Valid KDE (no DQ error found)&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_17" />
+                                        <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LastUpdated" DataTable="[dt_KDE_withoutDQErrorX]" DefaultValue="[DateTime.Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_18" />
                                         <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_6" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_KDE_withoutDQError_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
                                           <ueab:ExcelApplicationCard.Body>
                                             <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
@@ -689,7 +751,7 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;A1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_6" IgnoreEmptySource="False" Source="[dt_KDE_withoutDQError]" />
+                                                <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;A1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_6" IgnoreEmptySource="False" Source="[dt_KDE_withoutDQErrorX]" />
                                               </Sequence>
                                             </ActivityAction>
                                           </ueab:ExcelApplicationCard.Body>
@@ -731,7 +793,7 @@
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="WriteRangeX_11" IgnoreEmptySource="False" Source="[dt_KDE_withoutDQError]" />
+                                                    <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="WriteRangeX_11" IgnoreEmptySource="False" Source="[dt_KDE_withoutDQErrorX]" />
                                                     <ueab:WriteRangeX Append="True" Destination="[Excel.Sheet(&quot;Sheet1&quot;)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="WriteRangeX_12" IgnoreEmptySource="False" Source="[dt_KDE_withDQError]" />
                                                     <ueab:WriteRangeX Append="True" Destination="[Excel.Sheet(&quot;Sheet1&quot;)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_13" IgnoreEmptySource="False" Source="[dt_unmeasurableKDE]" />
                                                   </Sequence>
