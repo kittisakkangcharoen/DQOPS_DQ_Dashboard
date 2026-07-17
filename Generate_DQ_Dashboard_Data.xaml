@@ -38,6 +38,7 @@
       <x:String>UiPath.Excel.Activities.Business</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -95,9 +96,11 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Generate_DQ_Dashboard_Data" sap:VirtualizedContainerService.HintSize="947,630" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Generate_DQ_Dashboard_Data" sap:VirtualizedContainerService.HintSize="973,858" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KDEHeader" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_IDQMappingRepo" />
@@ -146,7 +149,8 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Getting KDE Header Information . . .&quot;]" />
-        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_KDEHeader]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="KDEHeader" WorkbookPath="Downloaded\KDEHeader.xlsx" />
+        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_KDEHeader]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="KDEHeader" WorkbookPath="Downloaded\KDEHeader.xlsx" />
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;&gt;  Total &quot; + dt_KDEHeader.RowCount.ToString + &quot; KDEs retrieved.&quot;]" />
       </Sequence>
       <FlowStep.Next>
         <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_2">
@@ -157,14 +161,15 @@
               <av:PointCollection x:Key="ConnectorLocation">525,70 595,70</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Get IDQ Mapping Repo" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Get IDQ Mapping Repo" sap:VirtualizedContainerService.HintSize="450,628" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Getting IDQ Mapping Repository . . .&quot;]" />
-            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_IDQMappingRepo]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="dim_IDQMapping" WorkbookPath="Downloaded\IDQ_MappingRepository.xlsx" />
+            <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_IDQMappingRepo]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="dim_IDQMapping" WorkbookPath="Downloaded\IDQ_MappingRepository.xlsx" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;&gt;  Total &quot; + dt_IDQMappingRepo.RowCount.ToString + &quot; mappings retrived.&quot;]" />
           </Sequence>
           <FlowStep.Next>
             <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_3">
@@ -175,7 +180,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">650,105 650,135 195,135 195,220 225,220</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Extract DQ Checks" sap:VirtualizedContainerService.HintSize="486,1865" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Extract DQ Checks" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -238,6 +243,7 @@
                     </ActivityAction>
                   </ui:ForEachRow.Body>
                 </ui:ForEachRow>
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;  Expected &quot; + dt_DQChecks.RowCount.ToString + &quot; DQ Checks generated.&quot;]" />
                 <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[&quot;Output\dim_DQChecks_&quot; + Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
                   <ueab:ExcelApplicationCard.Body>
                     <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
@@ -272,7 +278,8 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Getting current DQ results from file: &quot; + current_dqResultFileName]" />
-                    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_currentDQResults]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="01_dq_results" WorkbookPath="[&quot;Downloaded\&quot; + current_dqResultFileName]" />
+                    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_currentDQResults]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="01_dq_results" WorkbookPath="[&quot;Downloaded\&quot; + current_dqResultFileName]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;  Actual DQ Check results &quot; + dt_currentDQResults.RowCount.ToString + &quot; retrieved.&quot;]" />
                   </Sequence>
                   <FlowStep.Next>
                     <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_4">
@@ -334,19 +341,19 @@
                             </scg:List>
                           </ui:FilterDataTable.SelectColumns>
                         </ui:FilterDataTable>
-                        <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_2" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_KDE_DQ_Results_&quot; + Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
+                        <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_11" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_KDE_DQ_Results_&quot; + Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
                           <ueab:ExcelApplicationCard.Body>
                             <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,281" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,281" sap2010:WorkflowViewState.IdRef="Sequence_32">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False" Source="[dt_KDE_DQ_Results]" />
+                                <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_15" IgnoreEmptySource="False" Source="[dt_KDE_DQ_Results]" />
                               </Sequence>
                             </ActivityAction>
                           </ueab:ExcelApplicationCard.Body>
