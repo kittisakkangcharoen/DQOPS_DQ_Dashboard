@@ -96,7 +96,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Extract_KDEDQ_IBSL" sap:VirtualizedContainerService.HintSize="967,813" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extract_KDEDQ_IBSL" sap:VirtualizedContainerService.HintSize="967,1669" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_IBSL_KDE" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KDEDQ_Results" />
@@ -107,30 +107,31 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Get IBSL KDE" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Log message and read KDE data from Excel" sap:VirtualizedContainerService.HintSize="486,485" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Getting KDE for IBSL . . .&quot;]" />
       <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_IBSL_KDE]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Downloaded\ListOfKDE_IBSL.xlsx" />
     </Sequence>
-    <Sequence DisplayName="Get KDEDQ Results" sap:VirtualizedContainerService.HintSize="486,57" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Get KDEDQ Results" sap:VirtualizedContainerService.HintSize="486,485" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Getting KDE for IBSL . . .&quot;]" />
-      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_KDEDQ_Results]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="Output\fact_KDE_DQ_Results_20260709_163433.xlsx" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Getting KDE DQ Results . . .&quot;]" />
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_KDEDQ_Results]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="Output\fact_KDE_DQ_Results_20260717_150520.xlsx" />
     </Sequence>
     <Sequence DisplayName="Extract IBSL KDEDQ Results" sap:VirtualizedContainerService.HintSize="486,676" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:JoinDataTables DataTable1="[dt_IBSL_KDE]" DataTable2="[dt_KDEDQ_Results]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="452,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[dt_IBSL_KDEDQ_Results]">
