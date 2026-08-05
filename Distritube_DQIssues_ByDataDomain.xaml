@@ -39,6 +39,70 @@
       <x:String>UiPath.Excel.Model</x:String>
       <x:String>UiPath.Excel.Activities.Business</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Microsoft</x:String>
+      <x:String>Microsoft.Win32.SafeHandles</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Configuration.Assemblies</x:String>
+      <x:String>System.CodeDom.Compiler</x:String>
+      <x:String>System.Buffers</x:String>
+      <x:String>System.Buffers.Text</x:String>
+      <x:String>System.Buffers.Binary</x:String>
+      <x:String>System.Threading</x:String>
+      <x:String>System.Threading.Tasks</x:String>
+      <x:String>System.Threading.Tasks.Sources</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Text.Unicode</x:String>
+      <x:String>System.Security.Principal</x:String>
+      <x:String>System.Security.Permissions</x:String>
+      <x:String>System.Security.Cryptography</x:String>
+      <x:String>System.Runtime</x:String>
+      <x:String>System.Runtime.Remoting</x:String>
+      <x:String>System.Runtime.ExceptionServices</x:String>
+      <x:String>System.Runtime.ConstrainedExecution</x:String>
+      <x:String>System.Runtime.Versioning</x:String>
+      <x:String>System.Runtime.Loader</x:String>
+      <x:String>System.Runtime.Intrinsics</x:String>
+      <x:String>System.Runtime.Intrinsics.Wasm</x:String>
+      <x:String>System.Runtime.Intrinsics.Arm</x:String>
+      <x:String>System.Runtime.Intrinsics.X86</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.InteropServices.ObjectiveC</x:String>
+      <x:String>System.Runtime.InteropServices.Marshalling</x:String>
+      <x:String>System.Runtime.InteropServices.ComTypes</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
+      <x:String>System.Resources</x:String>
+      <x:String>System.Reflection.Metadata</x:String>
+      <x:String>System.Reflection.Emit</x:String>
+      <x:String>System.IO.Enumeration</x:String>
+      <x:String>System.Diagnostics.SymbolStore</x:String>
+      <x:String>System.Diagnostics.Contracts</x:String>
+      <x:String>System.Diagnostics.CodeAnalysis</x:String>
+      <x:String>System.Diagnostics.Tracing</x:String>
+      <x:String>System.Collections.Concurrent</x:String>
+      <x:String>Internal</x:String>
+      <x:String>System.CodeDom</x:String>
+      <x:String>Microsoft.CSharp</x:String>
+      <x:String>System.Linq.Expressions.Interpreter</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.ComponentModel.Design.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Security.Authentication.ExtendedProtection</x:String>
+      <x:String>System.Timers</x:String>
+      <x:String>System.ComponentModel.Design</x:String>
+      <x:String>System.Xml.Schema</x:String>
+      <x:String>System.Xml.Xsl</x:String>
+      <x:String>System.Xml.Xsl.Runtime</x:String>
+      <x:String>System.Xml.XPath</x:String>
+      <x:String>System.Xml.Resolvers</x:String>
+      <x:String>Microsoft.CodeAnalysis</x:String>
+      <x:String>Microsoft.VisualBasic.FileIO</x:String>
+      <x:String>System.Security.Authentication</x:String>
+      <x:String>System.Net.Cache</x:String>
+      <x:String>System.Net.NetworkInformation</x:String>
+      <x:String>System.Net.Security</x:String>
+      <x:String>System.Net.Sockets</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -95,29 +159,83 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Validation</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography</AssemblyReference>
+      <AssemblyReference>System.Security.Principal.Windows</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.IO.MemoryMappedFiles</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Registry</AssemblyReference>
+      <AssemblyReference>System.IO.Pipes</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Threading.AccessControl</AssemblyReference>
+      <AssemblyReference>System.Threading</AssemblyReference>
+      <AssemblyReference>System.Threading.Tasks.Parallel</AssemblyReference>
+      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
+      <AssemblyReference>System.Text.Encodings.Web</AssemblyReference>
+      <AssemblyReference>System.Security.Claims</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.Pkcs</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.ProtectedData</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Resources.Writer</AssemblyReference>
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.StackTrace</AssemblyReference>
+      <AssemblyReference>System.Collections.Concurrent</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Net.Security</AssemblyReference>
+      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xml.XPath.XDocument</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.Features</AssemblyReference>
+      <AssemblyReference>System.Net.NetworkInformation</AssemblyReference>
+      <AssemblyReference>System.Net.Ping</AssemblyReference>
+      <AssemblyReference>System.Net.Sockets</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Distritube_DQIssues_ByDataDomain" sap:VirtualizedContainerService.HintSize="959,630" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Distritube_DQIssues_ByDataDomain" sap:VirtualizedContainerService.HintSize="973,603" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_dqResults" />
-      <Variable x:TypeArguments="x:String" Name="current_dqResultFileName">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">EDG-DataQualityResults_20260715.xlsx</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="EDG-DataQualityResults_20260715.xlsx" Name="current_dqResultFileName" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_dqIssueHeader" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_dqIssueDetails" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_domainsWithDQIssues" />
-      <Variable x:TypeArguments="x:String" Name="reportMonth">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">202607</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="202607" Name="reportMonth" />
       <Variable x:TypeArguments="x:String" Name="localFolderName" />
       <Variable x:TypeArguments="x:String" Name="localFileName" />
       <Variable x:TypeArguments="x:String" Name="wk_dataDomain" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_wk_domain" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_wk_dqResults" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_wk_dqResults_Fail" />
+      <Variable x:TypeArguments="x:String" Name="filePath" />
+      <Variable x:TypeArguments="x:Boolean" Name="fileExists" />
+      <Variable x:TypeArguments="x:String" Name="selectedDomain" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_wk_dqResults_Fail_Header" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_wk_dqIssueDetails" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -128,14 +246,14 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID5</x:Reference>
+      <x:Reference>__ReferenceID6</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID5">
+    <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">205,25</av:Point>
+          <av:Point x:Key="ShapeLocation">395,25</av:Point>
           <av:Size x:Key="ShapeSize">110,70</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">315,60 385,60</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">505,60 575,60</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Sequence DisplayName="Get Latest DQ Results" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -149,12 +267,12 @@
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;-- Actual DQ Check results &quot; + dt_dqResults.RowCount.ToString + &quot; retrieved.&quot;]" />
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID0">
+        <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">385,25</av:Point>
+              <av:Point x:Key="ShapeLocation">575,25</av:Point>
               <av:Size x:Key="ShapeSize">110,70</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">495,60 575,60</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">685,60 765,60</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <Sequence DisplayName="Get DQ Issue Header" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -168,15 +286,15 @@
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;-- DQ Issues &quot; + dt_dqIssueHeader.RowCount.ToString + &quot; retrieved.&quot;]" />
           </Sequence>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID1">
+            <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">575,25</av:Point>
+                  <av:Point x:Key="ShapeLocation">765,25</av:Point>
                   <av:Size x:Key="ShapeSize">110,70</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">630,95 630,125 260,125 260,155</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">820,95 820,125 260,125 260,155</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Get DQ Issue Header" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Get DQ Issue Details" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -187,7 +305,7 @@
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;-- DQ Details &quot; + dt_dqIssueDetails.RowCount.ToString + &quot; retrieved.&quot;]" />
               </Sequence>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID2">
+                <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <av:Point x:Key="ShapeLocation">205,155</av:Point>
@@ -201,7 +319,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:FilterDataTable DataTable="[dt_dqResults]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_domainsWithDQIssues]" SelectColumnsMode="Keep">
+                    <ui:FilterDataTable DataTable="[dt_dqResults]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_domainsWithDQIssues]" SelectColumnsMode="Keep">
                       <ui:FilterDataTable.Filters>
                         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                           <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
@@ -225,10 +343,50 @@
                         </scg:List>
                       </ui:FilterDataTable.SelectColumns>
                     </ui:FilterDataTable>
-                    <ui:RemoveDuplicateRows DataTable="[dt_domainsWithDQIssues]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="416,104" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[dt_domainsWithDQIssues]" />
+                    <ui:RemoveDuplicateRows DataTable="[dt_domainsWithDQIssues]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[dt_domainsWithDQIssues]" />
+                    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="DataDomain" DataTable="[dt_domainsWithDQIssues]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="SortDataTable_1" OutputDataTable="[dt_domainsWithDQIssues]" SortOrder="Ascending" />
+                    <If Condition="[selectedDomain = &quot;*ALL&quot;]" sap:VirtualizedContainerService.HintSize="452,478" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,254" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:FilterDataTable DataTable="[dt_domainsWithDQIssues]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="FilterDataTable_4" OutputDataTable="[dt_domainsWithDQIssues]" SelectColumnsMode="Remove">
+                            <ui:FilterDataTable.Filters>
+                              <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                  <ui:FilterOperationArgument.Column>
+                                    <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
+                                  </ui:FilterOperationArgument.Column>
+                                  <ui:FilterOperationArgument.Operand>
+                                    <InArgument x:TypeArguments="x:String">[selectedDomain]</InArgument>
+                                  </ui:FilterOperationArgument.Operand>
+                                </ui:FilterOperationArgument>
+                              </scg:List>
+                            </ui:FilterDataTable.Filters>
+                            <ui:FilterDataTable.SelectColumns>
+                              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                <x:Null />
+                              </scg:List>
+                            </ui:FilterDataTable.SelectColumns>
+                          </ui:FilterDataTable>
+                        </Sequence>
+                      </If.Else>
+                    </If>
                   </Sequence>
                   <FlowStep.Next>
-                    <FlowStep x:Name="__ReferenceID3">
+                    <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_5">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">385,155</av:Point>
@@ -253,33 +411,33 @@
                         <ui:CreateDirectory Output="{x:Null}" ContinueOnError="True" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="416,114" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[localFolderName]" />
                       </Sequence>
                       <FlowStep.Next>
-                        <FlowStep x:Name="__ReferenceID4">
+                        <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_6">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">565,155</av:Point>
                               <av:Size x:Key="ShapeSize">110,70</av:Size>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Sequence DisplayName="Distribute DQ Issue Info by Domain" sap:VirtualizedContainerService.HintSize="556,2236" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                          <Sequence DisplayName="Distribute DQ Issue Info by Domain" sap:VirtualizedContainerService.HintSize="522,3788" sap2010:WorkflowViewState.IdRef="Sequence_7">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_domainsWithDQIssues]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="522,2176" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_domainsWithDQIssues]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,3728" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                               <ui:ForEachRow.Body>
                                 <ActivityAction x:TypeArguments="sd:DataRow">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520,2003" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,3555" sap2010:WorkflowViewState.IdRef="Sequence_8">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="486,179" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Extracting DQ Issues Info for data domain: &quot; + CurrentRow(&quot;DataDomain&quot;).ToString + &quot; . . .&quot;]" />
-                                    <Assign sap:VirtualizedContainerService.HintSize="486,179" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Extracting DQ Issues Info for data domain: &quot; + CurrentRow(&quot;DataDomain&quot;).ToString + &quot; . . .&quot;]" />
+                                    <Assign sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="Assign_3">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[wk_dataDomain]</OutArgument>
                                       </Assign.To>
@@ -287,7 +445,7 @@
                                         <InArgument x:TypeArguments="x:String">[CurrentRow("DataDomain").ToString.Replace("/","").Replace(" ","")]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:FilterDataTable DataTable="[dt_domainsWithDQIssues]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="486,199" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_wk_domain]" SelectColumnsMode="Remove">
+                                    <ui:FilterDataTable DataTable="[dt_domainsWithDQIssues]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,199" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_wk_domain]" SelectColumnsMode="Remove">
                                       <ui:FilterDataTable.Filters>
                                         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                           <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -306,40 +464,182 @@
                                         </scg:List>
                                       </ui:FilterDataTable.SelectColumns>
                                     </ui:FilterDataTable>
-                                    <ui:JoinDataTables DataTable1="[dt_wk_domain]" DataTable2="[dt_dqResults]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="486,96" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Inner" OutputDataTable="[dt_wk_dqResults]">
-                                      <ui:JoinDataTables.Arguments>
-                                        <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
-                                          <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
-                                            <ui:JoinOperationArgument.Column1>
-                                              <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
-                                            </ui:JoinOperationArgument.Column1>
-                                            <ui:JoinOperationArgument.Column2>
-                                              <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
-                                            </ui:JoinOperationArgument.Column2>
-                                          </ui:JoinOperationArgument>
-                                        </scg:List>
-                                      </ui:JoinDataTables.Arguments>
-                                    </ui:JoinDataTables>
-                                    <ui:FilterDataTable DataTable="[dt_wk_dqResults]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="486,199" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dt_wk_dqResults]" SelectColumnsMode="Remove">
-                                      <ui:FilterDataTable.Filters>
-                                        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                                          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
-                                            <ui:FilterOperationArgument.Column>
-                                              <InArgument x:TypeArguments="x:String">["ThresholdStatus"]</InArgument>
-                                            </ui:FilterOperationArgument.Column>
-                                            <ui:FilterOperationArgument.Operand>
-                                              <InArgument x:TypeArguments="x:String">["Fail"]</InArgument>
-                                            </ui:FilterOperationArgument.Operand>
-                                          </ui:FilterOperationArgument>
-                                        </scg:List>
-                                      </ui:FilterDataTable.Filters>
-                                      <ui:FilterDataTable.SelectColumns>
-                                        <scg:List x:TypeArguments="InArgument" Capacity="4">
-                                          <x:Null />
-                                        </scg:List>
-                                      </ui:FilterDataTable.SelectColumns>
-                                    </ui:FilterDataTable>
-                                    <Assign sap:VirtualizedContainerService.HintSize="486,179" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                    <Sequence DisplayName="Sequence - Get Fail Check Info" sap:VirtualizedContainerService.HintSize="452,447" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:JoinDataTables DataTable1="[dt_wk_domain]" DataTable2="[dt_dqResults]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="416,96" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[dt_wk_dqResults]">
+                                        <ui:JoinDataTables.Arguments>
+                                          <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+                                            <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                                              <ui:JoinOperationArgument.Column1>
+                                                <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
+                                              </ui:JoinOperationArgument.Column1>
+                                              <ui:JoinOperationArgument.Column2>
+                                                <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
+                                              </ui:JoinOperationArgument.Column2>
+                                            </ui:JoinOperationArgument>
+                                          </scg:List>
+                                        </ui:JoinDataTables.Arguments>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:JoinDataTables>
+                                      <ui:FilterDataTable DataTable="[dt_wk_dqResults]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,199" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dt_wk_dqResults_Fail]" SelectColumnsMode="Remove">
+                                        <ui:FilterDataTable.Filters>
+                                          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                            <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                              <ui:FilterOperationArgument.Column>
+                                                <InArgument x:TypeArguments="x:String">["ThresholdStatus"]</InArgument>
+                                              </ui:FilterOperationArgument.Column>
+                                              <ui:FilterOperationArgument.Operand>
+                                                <InArgument x:TypeArguments="x:String">["Fail"]</InArgument>
+                                              </ui:FilterOperationArgument.Operand>
+                                            </ui:FilterOperationArgument>
+                                          </scg:List>
+                                        </ui:FilterDataTable.Filters>
+                                        <ui:FilterDataTable.SelectColumns>
+                                          <scg:List x:TypeArguments="InArgument" Capacity="4">
+                                            <InArgument x:TypeArguments="x:String">["DataDomain_1"]</InArgument>
+                                          </scg:List>
+                                        </ui:FilterDataTable.SelectColumns>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:FilterDataTable>
+                                      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_wk_dqResults_Fail]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="416,52" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                                        <ui:ForEachRow.Body>
+                                          <ActivityAction x:TypeArguments="sd:DataRow">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                            </ActivityAction.Argument>
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,464" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                              <Sequence.Variables>
+                                                <Variable x:TypeArguments="x:String" Name="wk_measID" />
+                                              </Sequence.Variables>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:String">[wk_measID]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">[CurrentRow("MeasurementID").ToString.ToLower]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <ui:UpdateRowItem ColumnIndex="{x:Null}" ColumnName="MeasurementID" DisplayName="Update Row Item" sap:VirtualizedContainerService.HintSize="416,221" sap2010:WorkflowViewState.IdRef="UpdateRowItem_1" Row="[CurrentRow]" Value="[wk_measID]" />
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </ui:ForEachRow.Body>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:ForEachRow>
+                                    </Sequence>
+                                    <Sequence DisplayName="Sequence - Get Issue Header" sap:VirtualizedContainerService.HintSize="452,386" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:JoinDataTables DataTable1="[dt_wk_dqResults_Fail]" DataTable2="[dt_dqIssueHeader]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="416,96" sap2010:WorkflowViewState.IdRef="JoinDataTables_2" JoinType="Left" OutputDataTable="[dt_wk_dqResults_Fail_Header]">
+                                        <ui:JoinDataTables.Arguments>
+                                          <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+                                            <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                                              <ui:JoinOperationArgument.Column1>
+                                                <InArgument x:TypeArguments="x:String">["MeasurementID"]</InArgument>
+                                              </ui:JoinOperationArgument.Column1>
+                                              <ui:JoinOperationArgument.Column2>
+                                                <InArgument x:TypeArguments="x:String">["MeasurementID"]</InArgument>
+                                              </ui:JoinOperationArgument.Column2>
+                                            </ui:JoinOperationArgument>
+                                          </scg:List>
+                                        </ui:JoinDataTables.Arguments>
+                                      </ui:JoinDataTables>
+                                      <ui:FilterDataTable DataTable="[dt_wk_dqResults_Fail_Header]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="FilterDataTable_6" OutputDataTable="[dt_wk_dqResults_Fail_Header]" SelectColumnsMode="Keep">
+                                        <ui:FilterDataTable.Filters>
+                                          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                            <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
+                                          </scg:List>
+                                        </ui:FilterDataTable.Filters>
+                                        <ui:FilterDataTable.SelectColumns>
+                                          <scg:List x:TypeArguments="InArgument" Capacity="16">
+                                            <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["MeasurementID"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["ElementName"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["DataField"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["KDENumber"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["Dimension"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["TestedRows"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["AnomalyRows"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["ValidRows"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["ValidPercentage"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["Threshold"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["ThresholdStatus"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["Jobname"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["IssueID"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["LastUpdated"]</InArgument>
+                                          </scg:List>
+                                        </ui:FilterDataTable.SelectColumns>
+                                      </ui:FilterDataTable>
+                                    </Sequence>
+                                    <Sequence DisplayName="Sequence - Get Issue Details" sap:VirtualizedContainerService.HintSize="452,386" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:JoinDataTables DataTable1="[dt_wk_dqResults_Fail_Header]" DataTable2="[dt_dqIssueDetails]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="416,96" sap2010:WorkflowViewState.IdRef="JoinDataTables_4" JoinType="Left" OutputDataTable="[dt_wk_dqIssueDetails]">
+                                        <ui:JoinDataTables.Arguments>
+                                          <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+                                            <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                                              <ui:JoinOperationArgument.Column1>
+                                                <InArgument x:TypeArguments="x:String">["IssueID"]</InArgument>
+                                              </ui:JoinOperationArgument.Column1>
+                                              <ui:JoinOperationArgument.Column2>
+                                                <InArgument x:TypeArguments="x:String">["IssueID"]</InArgument>
+                                              </ui:JoinOperationArgument.Column2>
+                                            </ui:JoinOperationArgument>
+                                          </scg:List>
+                                        </ui:JoinDataTables.Arguments>
+                                      </ui:JoinDataTables>
+                                      <ui:FilterDataTable DataTable="[dt_wk_dqIssueDetails]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,190" sap2010:WorkflowViewState.IdRef="FilterDataTable_7" OutputDataTable="[dt_wk_dqIssueDetails]" SelectColumnsMode="Keep">
+                                        <ui:FilterDataTable.Filters>
+                                          <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                                            <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
+                                          </scg:List>
+                                        </ui:FilterDataTable.Filters>
+                                        <ui:FilterDataTable.SelectColumns>
+                                          <scg:List x:TypeArguments="InArgument" Capacity="16">
+                                            <InArgument x:TypeArguments="x:String">["IssueID"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["KDENumber"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["Description"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["ErrorID"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["RefInfo"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["ErrorValue"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["ErrorDescription"]</InArgument>
+                                            <InArgument x:TypeArguments="x:String">["LastUpdated_1"]</InArgument>
+                                          </scg:List>
+                                        </ui:FilterDataTable.SelectColumns>
+                                      </ui:FilterDataTable>
+                                    </Sequence>
+                                    <Assign sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="Assign_2">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="x:String">[localFileName]</OutArgument>
                                       </Assign.To>
@@ -347,7 +647,7 @@
                                         <InArgument x:TypeArguments="x:String">["DQ_Issues_" + reportMonth + "_" + CurrentRow("DataDomain").ToString.Replace("/","").Replace(" ","") + ".xlsx"]</InArgument>
                                       </Assign.Value>
                                     </Assign>
-                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,342" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,61" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                                       <ui:CommentOut.Body>
                                         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,227" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                           <sap:WorkflowViewStateService.ViewState>
@@ -358,20 +658,63 @@
                                           <ui:CreateFile Output="{x:Null}" PathResource="{x:Null}" DisplayName="Create File" sap:VirtualizedContainerService.HintSize="416,167" sap2010:WorkflowViewState.IdRef="CreateFile_2" Name="[&quot;Reports\DQIssues_&quot; + reportMonth +&quot;\&quot;+localFileName]" Path="[localFolderName]" />
                                         </Sequence>
                                       </ui:CommentOut.Body>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
                                     </ui:CommentOut>
-                                    <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="486,514" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[localFileName]">
+                                    <Assign sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:String">[filePath]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:String">["Reports\DQIssues_" + reportMonth +"\" + localFileName]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <ui:FileExistsX DisplayName="Check if a specified file exists on the local file system." Exists="[fileExists]" sap:VirtualizedContainerService.HintSize="452,179" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="[filePath]" />
+                                    <If Condition="[Not fileExists]" DisplayName="If the file does not exist, log a message indicating that the file was not found." sap:VirtualizedContainerService.HintSize="452,61" sap2010:WorkflowViewState.IdRef="If_1">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <If.Then>
+                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="474,94" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="474,183" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="440,119" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[filePath]" />
+                                        </Sequence>
+                                      </If.Else>
+                                    </If>
+                                    <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,740" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[filePath]">
                                       <ueab:ExcelApplicationCard.Body>
                                         <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                                           <ActivityAction.Argument>
                                             <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                                           </ActivityAction.Argument>
-                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,281" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,507" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;DQIssues&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[dt_wk_dqResults]" />
+                                            <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;IssueDetails&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="WriteRangeX_2" IgnoreEmptySource="False" Source="[dt_wk_dqIssueDetails]" />
+                                            <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;DQIssues&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[dt_wk_dqResults_Fail_Header]" />
                                           </Sequence>
                                         </ActivityAction>
                                       </ueab:ExcelApplicationCard.Body>
@@ -382,15 +725,15 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ueab:ExcelApplicationCard>
-                                    <Sequence DisplayName="Sequence - Clear working tables" sap:VirtualizedContainerService.HintSize="452,52" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                    <Sequence DisplayName="Sequence - Clear working tables" sap:VirtualizedContainerService.HintSize="452,316" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:ClearDataTable DataTable="[dt_wk_domain]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="ClearDataTable_3" />
-                                      <ui:ClearDataTable DataTable="[dt_wk_dqResults]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="416,104" sap2010:WorkflowViewState.IdRef="ClearDataTable_4" />
+                                      <ui:ClearDataTable DataTable="[dt_wk_domain]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="416,117" sap2010:WorkflowViewState.IdRef="ClearDataTable_3" />
+                                      <ui:ClearDataTable DataTable="[dt_wk_dqResults]" DisplayName="Clear Data Table" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="ClearDataTable_4" />
                                     </Sequence>
                                   </Sequence>
                                 </ActivityAction>
@@ -413,5 +756,29 @@
     <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
     <x:Reference>__ReferenceID4</x:Reference>
+    <FlowStep x:Name="__ReferenceID6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">205,25</av:Point>
+          <av:Size x:Key="ShapeSize">110,70</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">315,60 395,60</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Selective" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_18">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:InputDialog OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="416,266" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Please select Data Domain . . ." Options="[{&quot;*ALL&quot;,&#xA;&quot;Accounting&quot;,&#xA;&quot;Asset Management&quot;,&#xA;&quot;Claims&quot;,&#xA;&quot;Customer&quot;,&#xA;&quot;Finance&quot;,&#xA;&quot;Human Resource&quot;,&#xA;&quot;Information Asset&quot;,&#xA;&quot;Insurance/Policy&quot;,&#xA;&quot;Management Information System&quot;,&#xA;&quot;Marketing&quot;,&#xA;&quot;Product&quot;,&#xA;&quot;Reinsurance&quot;,&#xA;&quot;Research&quot;,&#xA;&quot;Sales&quot;,&#xA;&quot;Service&quot;,&#xA;&quot;Underwriting&quot;&#xA;}]" Title="Enter your choice" TopMost="False">
+          <ui:InputDialog.Result>
+            <OutArgument x:TypeArguments="x:String">[selectedDomain]</OutArgument>
+          </ui:InputDialog.Result>
+        </ui:InputDialog>
+      </Sequence>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID5</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
   </Flowchart>
 </Activity>
