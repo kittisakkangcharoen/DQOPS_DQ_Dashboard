@@ -39,6 +39,7 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>System.Numerics</x:String>
+      <x:String>UiPath.Excel.Activities.Business.Filter</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -100,13 +101,13 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Generate_DQ_Dashboard_Data" sap:VirtualizedContainerService.HintSize="925,603" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Generate_DQ_Dashboard_Data" sap:VirtualizedContainerService.HintSize="946,603" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KDEHeader" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_IDQMappingRepo" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_DQChecks" />
-      <Variable x:TypeArguments="x:String" Default="EDG-DataQualityResults_20260715.xlsx" Name="current_dqResultFileName" />
-      <Variable x:TypeArguments="x:String" Default="202607" Name="reportMonth" />
+      <Variable x:TypeArguments="x:String" Default="EDG-DataQualityResults_20260901.xlsx" Name="current_dqResultFileName" />
+      <Variable x:TypeArguments="x:String" Default="202609" Name="reportMonth" />
       <Variable x:TypeArguments="x:String" Name="previous_dqResultFileName" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_currentDQResults" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KDE_DQ_Results" />
@@ -122,6 +123,7 @@
       <Variable x:TypeArguments="sd:DataTable" Name="dt_measurableKDEX" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_PassedChecks" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KDE_withoutDQErrorX" />
+      <Variable x:TypeArguments="x:Decimal" Default="95" Name="cmpltThsld" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -132,9 +134,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID12</x:Reference>
+      <x:Reference>__ReferenceID11</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID12" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+    <FlowStep x:Name="__ReferenceID11" sap2010:WorkflowViewState.IdRef="FlowStep_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">235,35</av:Point>
@@ -142,7 +144,7 @@
           <av:PointCollection x:Key="ConnectorLocation">345,70 415,70</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Get KDE Header" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="Get KDE Header" sap:VirtualizedContainerService.HintSize="450,741" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -150,7 +152,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Getting KDE Header Information . . .&quot;]" />
         <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_KDEHeader]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="KDEHeader" WorkbookPath="Downloaded\KDEHeader.xlsx" />
-        <ui:FilterDataTable DataTable="[dt_KDEHeader]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_17" OutputDataTable="[dt_KDEHeader]" SelectColumnsMode="Remove">
+        <ui:FilterDataTable DataTable="[dt_KDEHeader]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="FilterDataTable_17" OutputDataTable="[dt_KDEHeader]" SelectColumnsMode="Remove">
           <ui:FilterDataTable.Filters>
             <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
               <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
@@ -180,7 +182,7 @@
               <av:PointCollection x:Key="ConnectorLocation">525,70 595,70</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Get IDQ Mapping Repo" sap:VirtualizedContainerService.HintSize="450,823" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Get IDQ Mapping Repo" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -225,7 +227,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Extracting DQ Checks . . .&quot;]" />
-                <ui:JoinDataTables DataTable1="[dt_KDEHeader]" DataTable2="[dt_IDQMappingRepo]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="488,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[dt_DQChecks]">
+                <ui:JoinDataTables DataTable1="[dt_KDEHeader]" DataTable2="[dt_IDQMappingRepo]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="488,167" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[dt_DQChecks]">
                   <ui:JoinDataTables.Arguments>
                     <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
                       <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -249,27 +251,27 @@
                 </ui:JoinDataTables>
                 <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Dimension" DataTable="[dt_DQChecks]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="488,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
                 <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="DS_ID" DataTable="[dt_DQChecks]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="488,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" />
-                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_DQChecks]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,871" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_DQChecks]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="488,887" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                   <ui:ForEachRow.Body>
                     <ActivityAction x:TypeArguments="sd:DataRow">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,689" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,705" sap2010:WorkflowViewState.IdRef="Sequence_5">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[CurrentRow(&quot;IDQ_Mapping&quot;).ToString &lt;&gt; &quot;&quot;]" sap:VirtualizedContainerService.HintSize="452,625" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If Condition="[CurrentRow(&quot;IDQ_Mapping&quot;).ToString &lt;&gt; &quot;&quot;]" sap:VirtualizedContainerService.HintSize="452,641" sap2010:WorkflowViewState.IdRef="If_1">
                           <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,405" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,413" sap2010:WorkflowViewState.IdRef="Sequence_35">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="Assign_6">
+                              <Assign sap:VirtualizedContainerService.HintSize="416,179" sap2010:WorkflowViewState.IdRef="Assign_6">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Object">[CurrentRow("Dimension")]</OutArgument>
                                 </Assign.To>
@@ -288,7 +290,7 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,94" sap2010:WorkflowViewState.IdRef="Sequence_36">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -302,7 +304,7 @@
                   </ui:ForEachRow.Body>
                 </ui:ForEachRow>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;  Expected &quot; + dt_DQChecks.RowCount.ToString + &quot; DQ Checks generated.&quot;]" />
-                <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="488,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" ResizeWindow="None" WorkbookPath="[&quot;Output\dim_DQChecks_&quot; + Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
+                <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="488,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_13" ResizeWindow="None" WorkbookPath="[&quot;Output\dim_DQChecks_&quot; + Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
                   <ueab:ExcelApplicationCard.Body>
                     <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                       <ActivityAction.Argument>
@@ -337,6 +339,39 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Getting current DQ results from file: &quot; + current_dqResultFileName]" />
                     <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_currentDQResults]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,227" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="01_dq_results" WorkbookPath="[&quot;Downloaded\&quot; + current_dqResultFileName]" />
+                    <ui:FilterDataTable DataTable="[dt_currentDQResults]" DisplayName="Filter Data Table" FilterRowsMode="Remove" sap:VirtualizedContainerService.HintSize="416,113" sap2010:WorkflowViewState.IdRef="FilterDataTable_19" OutputDataTable="[dt_currentDQResults]" SelectColumnsMode="Remove">
+                      <ui:FilterDataTable.Filters>
+                        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+                          <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                            <ui:FilterOperationArgument.Column>
+                              <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
+                            </ui:FilterOperationArgument.Column>
+                            <ui:FilterOperationArgument.Operand>
+                              <InArgument x:TypeArguments="x:String">["Completeness"]</InArgument>
+                            </ui:FilterOperationArgument.Operand>
+                          </ui:FilterOperationArgument>
+                          <ui:FilterOperationArgument BooleanOperator="And" Operator="LT">
+                            <ui:FilterOperationArgument.Column>
+                              <InArgument x:TypeArguments="x:String">["ValidPercentage"]</InArgument>
+                            </ui:FilterOperationArgument.Column>
+                            <ui:FilterOperationArgument.Operand>
+                              <InArgument x:TypeArguments="x:Decimal">[cmpltThsld]</InArgument>
+                            </ui:FilterOperationArgument.Operand>
+                          </ui:FilterOperationArgument>
+                        </scg:List>
+                      </ui:FilterDataTable.Filters>
+                      <ui:FilterDataTable.SelectColumns>
+                        <scg:List x:TypeArguments="InArgument" Capacity="4">
+                          <x:Null />
+                        </scg:List>
+                      </ui:FilterDataTable.SelectColumns>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ui:FilterDataTable>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,166" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;  Actual DQ Check results &quot; + dt_currentDQResults.RowCount.ToString + &quot; retrieved.&quot;]" />
                   </Sequence>
                   <FlowStep.Next>
@@ -355,7 +390,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Generating KDE DQ Results fact. . .&quot;]" />
-                        <ui:JoinDataTables DataTable1="[dt_DQChecks]" DataTable2="[dt_currentDQResults]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="452,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_2" JoinType="Left" OutputDataTable="[dt_KDE_DQ_Results]">
+                        <ui:JoinDataTables DataTable1="[dt_DQChecks]" DataTable2="[dt_currentDQResults]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="452,167" sap2010:WorkflowViewState.IdRef="JoinDataTables_2" JoinType="Left" OutputDataTable="[dt_KDE_DQ_Results]">
                           <ui:JoinDataTables.Arguments>
                             <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
                               <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -369,7 +404,7 @@
                             </scg:List>
                           </ui:JoinDataTables.Arguments>
                         </ui:JoinDataTables>
-                        <ui:FilterDataTable DataTable="[dt_KDE_DQ_Results]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_KDE_DQ_Results]" SelectColumnsMode="Keep">
+                        <ui:FilterDataTable DataTable="[dt_KDE_DQ_Results]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[dt_KDE_DQ_Results]" SelectColumnsMode="Keep">
                           <ui:FilterDataTable.Filters>
                             <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                               <ui:FilterOperationArgument Column="{x:Null}" Operand="{x:Null}" BooleanOperator="And" Operator="LT" />
@@ -388,8 +423,8 @@
                               <InArgument x:TypeArguments="x:String">["ProductionStatus"]</InArgument>
                               <InArgument x:TypeArguments="x:String">["Dimension"]</InArgument>
                               <InArgument x:TypeArguments="x:String">["DS_ID"]</InArgument>
-                              <InArgument x:TypeArguments="x:String">["MeasurementID"]</InArgument>
                               <InArgument x:TypeArguments="x:String">["DataField"]</InArgument>
+                              <InArgument x:TypeArguments="x:String">["MeasurementID"]</InArgument>
                               <InArgument x:TypeArguments="x:String">["TestedRows"]</InArgument>
                               <InArgument x:TypeArguments="x:String">["AnomalyRows"]</InArgument>
                               <InArgument x:TypeArguments="x:String">["ValidRows"]</InArgument>
@@ -433,13 +468,29 @@
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:FilterDataTable DataTable="[dt_KDE_DQ_Results]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="486,195" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_unmeasurableKDE]" SelectColumnsMode="Keep">
+                            <ui:FilterDataTable DataTable="[dt_KDE_DQ_Results]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[dt_unmeasurableKDE]" SelectColumnsMode="Keep">
                               <ui:FilterDataTable.Filters>
                                 <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
                                   <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EMPTY">
                                     <ui:FilterOperationArgument.Column>
                                       <InArgument x:TypeArguments="x:String">["ThresholdStatus"]</InArgument>
                                     </ui:FilterOperationArgument.Column>
+                                  </ui:FilterOperationArgument>
+                                  <ui:FilterOperationArgument BooleanOperator="Or" Operator="LT">
+                                    <ui:FilterOperationArgument.Column>
+                                      <InArgument x:TypeArguments="x:String">["ValidPercentage"]</InArgument>
+                                    </ui:FilterOperationArgument.Column>
+                                    <ui:FilterOperationArgument.Operand>
+                                      <InArgument x:TypeArguments="x:Decimal">[cmpltThsld]</InArgument>
+                                    </ui:FilterOperationArgument.Operand>
+                                  </ui:FilterOperationArgument>
+                                  <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
+                                    <ui:FilterOperationArgument.Column>
+                                      <InArgument x:TypeArguments="x:String">["Dimension"]</InArgument>
+                                    </ui:FilterOperationArgument.Column>
+                                    <ui:FilterOperationArgument.Operand>
+                                      <InArgument x:TypeArguments="x:String">["Completeness"]</InArgument>
+                                    </ui:FilterOperationArgument.Operand>
                                   </ui:FilterOperationArgument>
                                 </scg:List>
                               </ui:FilterDataTable.Filters>
@@ -449,11 +500,17 @@
                                   <InArgument x:TypeArguments="x:String">["KDENumber"]</InArgument>
                                 </scg:List>
                               </ui:FilterDataTable.SelectColumns>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
                             </ui:FilterDataTable>
-                            <ui:RemoveDuplicateRows DataTable="[dt_unmeasurableKDE]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="486,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[dt_unmeasurableKDE]" />
-                            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Category" DataTable="[dt_unmeasurableKDE]" DefaultValue="[&quot;Cannot be measured&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="486,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" />
-                            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LastUpdated" DataTable="[dt_unmeasurableKDE]" DefaultValue="[DateTime.Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="486,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
-                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,275" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+                            <ui:RemoveDuplicateRows DataTable="[dt_unmeasurableKDE]" DisplayName="Remove Duplicate Rows" sap:VirtualizedContainerService.HintSize="452,113" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_1" OutputDataTable="[dt_unmeasurableKDE]" />
+                            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Category" DataTable="[dt_unmeasurableKDE]" DefaultValue="[&quot;Cannot be measured&quot;]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_3" />
+                            <ui:AddDataColumn x:TypeArguments="x:Object" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="LastUpdated" DataTable="[dt_unmeasurableKDE]" DefaultValue="[DateTime.Now.ToString(&quot;yyyy-MM-dd HH:mm:ss&quot;)]" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="452,221" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
+                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="CommentOut_6">
                               <ui:CommentOut.Body>
                                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,164" sap2010:WorkflowViewState.IdRef="Sequence_33">
                                   <sap:WorkflowViewStateService.ViewState>
@@ -465,7 +522,7 @@
                                 </Sequence>
                               </ui:CommentOut.Body>
                             </ui:CommentOut>
-                            <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="486,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_unmeasurableKDE_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
+                            <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_unmeasurableKDE_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
                               <ueab:ExcelApplicationCard.Body>
                                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                                   <ActivityAction.Argument>
@@ -855,7 +912,7 @@
                                                 <OutArgument x:TypeArguments="x:String">[fileName_factKDEByCategory]</OutArgument>
                                               </Assign.To>
                                               <Assign.Value>
-                                                <InArgument x:TypeArguments="x:String">["Output\fact_TotalKDE_byCategory_"+ Now.ToString("yyyyMMdd_HHmmss") + ".xlsx"]</InArgument>
+                                                <InArgument x:TypeArguments="x:String">["Output\fact_TotalKDE_byCategory_"+ Now.ToString("yyyyMMdd_HHmmss") +"_CLMLT" + cmpltThsld.ToString + ".xlsx"]</InArgument>
                                               </Assign.Value>
                                             </Assign>
                                             <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,953" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_9" ResizeWindow="None" WorkbookPath="[fileName_factKDEByCategory]">
@@ -884,7 +941,7 @@
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <av:Point x:Key="ShapeLocation">315,505</av:Point>
                                                   <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                  <av:PointCollection x:Key="ConnectorLocation">425,540 495,540</av:PointCollection>
+                                                  <av:PointCollection x:Key="ConnectorLocation">425,540 455,540 455,480 625,480 625,540 655,540</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <Sequence DisplayName="Prepare Report Data" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_23">
@@ -893,75 +950,70 @@
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_KDE_byCategory]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="Sheet1" WorkbookPath="[fileName_factKDEByCategory]" />
                                               </Sequence>
                                               <FlowStep.Next>
-                                                <FlowStep x:Name="__ReferenceID10" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+                                                <FlowStep x:Name="__ReferenceID10" sap2010:WorkflowViewState.IdRef="FlowStep_1">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <av:Point x:Key="ShapeLocation">495,505</av:Point>
+                                                      <av:Point x:Key="ShapeLocation">655,505</av:Point>
                                                       <av:Size x:Key="ShapeSize">110,70</av:Size>
-                                                      <av:PointCollection x:Key="ConnectorLocation">605,540 665,540</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Sequence DisplayName="Generate Reports" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                                  <Sequence DisplayName="Generate Measurable DQ Results" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                                    <Sequence.Variables>
+                                                      <Variable x:TypeArguments="sd:DataTable" Name="dt_measurableKDEDQ_Results" />
+                                                    </Sequence.Variables>
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_5">
-                                                      <Assign.To>
-                                                        <OutArgument x:TypeArguments="x:String">[fileName]</OutArgument>
-                                                      </Assign.To>
-                                                      <Assign.Value>
-                                                        <InArgument x:TypeArguments="x:String">["rpt01_KDE_byCategory_" + Now.ToString("yyyyMMdd_HHmmss") + ".xlsx"]</InArgument>
-                                                      </Assign.Value>
-                                                    </Assign>
-                                                    <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_4">
-                                                      <Assign.To>
-                                                        <OutArgument x:TypeArguments="x:String">[localFilePath]</OutArgument>
-                                                      </Assign.To>
-                                                      <Assign.Value>
-                                                        <InArgument x:TypeArguments="x:String">["Reports\" + fileName]</InArgument>
-                                                      </Assign.Value>
-                                                    </Assign>
-                                                    <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_10" ResizeWindow="None" WorkbookPath="[localFilePath]">
+                                                    <ui:JoinDataTables DataTable1="[dt_measurableKDEX]" DataTable2="[dt_KDE_DQ_Results]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="452,92" sap2010:WorkflowViewState.IdRef="JoinDataTables_10" JoinType="Inner" OutputDataTable="[dt_measurableKDEDQ_Results]">
+                                                      <ui:JoinDataTables.Arguments>
+                                                        <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+                                                          <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                                                            <ui:JoinOperationArgument.Column1>
+                                                              <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
+                                                            </ui:JoinOperationArgument.Column1>
+                                                            <ui:JoinOperationArgument.Column2>
+                                                              <InArgument x:TypeArguments="x:String">["DataDomain"]</InArgument>
+                                                            </ui:JoinOperationArgument.Column2>
+                                                          </ui:JoinOperationArgument>
+                                                          <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+                                                            <ui:JoinOperationArgument.Column1>
+                                                              <InArgument x:TypeArguments="x:String">["KDENumber"]</InArgument>
+                                                            </ui:JoinOperationArgument.Column1>
+                                                            <ui:JoinOperationArgument.Column2>
+                                                              <InArgument x:TypeArguments="x:String">["KDENumber"]</InArgument>
+                                                            </ui:JoinOperationArgument.Column2>
+                                                          </ui:JoinOperationArgument>
+                                                        </scg:List>
+                                                      </ui:JoinDataTables.Arguments>
+                                                    </ui:JoinDataTables>
+                                                    <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_12" ResizeWindow="None" WorkbookPath="[&quot;Output\fact_measurableKDE_DQResults_&quot;+ Now.ToString(&quot;yyyyMMdd_HHmmss&quot;) + &quot;.xlsx&quot;]">
                                                       <ueab:ExcelApplicationCard.Body>
                                                         <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                                                           <ActivityAction.Argument>
                                                             <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                                                           </ActivityAction.Argument>
-                                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,281" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,281" sap2010:WorkflowViewState.IdRef="Sequence_38">
                                                             <sap:WorkflowViewStateService.ViewState>
                                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_14" IgnoreEmptySource="False" Source="[dt_KDE_byCategory]" />
+                                                            <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_16" IgnoreEmptySource="False" Source="[dt_measurableKDEDQ_Results]" />
                                                           </Sequence>
                                                         </ActivityAction>
                                                       </ueab:ExcelApplicationCard.Body>
-                                                    </ueab:ExcelApplicationCard>
-                                                  </Sequence>
-                                                  <FlowStep.Next>
-                                                    <FlowStep x:Name="__ReferenceID11" sap2010:WorkflowViewState.IdRef="FlowStep_6">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <av:Point x:Key="ShapeLocation">665,505</av:Point>
-                                                          <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <Sequence DisplayName="Copy to OneDrive Folder" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_26">
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:CopyFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;C:\Users\kittisak.kan\OneDrive - thailife.com\EDG Team Site - Data Quality Results\&quot; + localFilePath]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="416,215" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[localFilePath]" />
-                                                      </Sequence>
-                                                    </FlowStep>
-                                                  </FlowStep.Next>
+                                                    </ueab:ExcelApplicationCard>
+                                                  </Sequence>
                                                 </FlowStep>
                                               </FlowStep.Next>
                                             </FlowStep>
@@ -995,7 +1047,70 @@
     <x:Reference>__ReferenceID7</x:Reference>
     <x:Reference>__ReferenceID8</x:Reference>
     <x:Reference>__ReferenceID9</x:Reference>
+    <FlowStep sap2010:WorkflowViewState.IdRef="FlowStep_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">495,505</av:Point>
+          <av:Size x:Key="ShapeSize">110,70</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Generate Reports" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_24">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_5">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[fileName]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">["rpt01_KDE_byCategory_" + Now.ToString("yyyyMMdd_HHmmss") + ".xlsx"]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="Assign_4">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[localFilePath]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">["Reports\" + fileName]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <ueab:ExcelApplicationCard DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="452,501" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_10" ResizeWindow="None" WorkbookPath="[localFilePath]">
+          <ueab:ExcelApplicationCard.Body>
+            <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,281" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;Sheet1&quot;).Range(&quot;A1&quot;)]" DisplayName="Write DataTable to Excel" sap:VirtualizedContainerService.HintSize="416,217" sap2010:WorkflowViewState.IdRef="WriteRangeX_14" IgnoreEmptySource="False" Source="[dt_KDE_byCategory]" />
+              </Sequence>
+            </ActivityAction>
+          </ueab:ExcelApplicationCard.Body>
+        </ueab:ExcelApplicationCard>
+      </Sequence>
+    </FlowStep>
+    <FlowStep sap2010:WorkflowViewState.IdRef="FlowStep_6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">825,505</av:Point>
+          <av:Size x:Key="ShapeSize">110,70</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Copy to OneDrive Folder" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_26">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:CopyFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;C:\Users\kittisak.kan\OneDrive - thailife.com\EDG Team Site - Data Quality Results\&quot; + localFilePath]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="416,215" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[localFilePath]" />
+      </Sequence>
+    </FlowStep>
     <x:Reference>__ReferenceID10</x:Reference>
-    <x:Reference>__ReferenceID11</x:Reference>
   </Flowchart>
 </Activity>

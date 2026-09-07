@@ -97,7 +97,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Extract_KDEDQ_IBSL" sap:VirtualizedContainerService.HintSize="813,3424" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extract_KDEDQ_IBSL" sap:VirtualizedContainerService.HintSize="919,3424" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_IBSL_KDE" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KDEDQ_Results" />
@@ -220,7 +220,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Getting KDE DQ Results . . .&quot;]" />
-      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_KDEDQ_Results]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="Output\fact_KDE_DQ_Results_20260727_170949.xlsx" />
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_KDEDQ_Results]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="01_dq_results" WorkbookPath="Downloaded\EDG-DataQualityResults_20260802.xlsx" />
     </Sequence>
     <Sequence DisplayName="Extract IBSL KDEDQ Results" sap:VirtualizedContainerService.HintSize="486,871" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
@@ -237,7 +237,7 @@
                 <InArgument x:TypeArguments="x:String">["IDQ_Mapping"]</InArgument>
               </ui:JoinOperationArgument.Column1>
               <ui:JoinOperationArgument.Column2>
-                <InArgument x:TypeArguments="x:String">["IDQ_Mapping"]</InArgument>
+                <InArgument x:TypeArguments="x:String">["JobName"]</InArgument>
               </ui:JoinOperationArgument.Column2>
             </ui:JoinOperationArgument>
           </scg:List>
