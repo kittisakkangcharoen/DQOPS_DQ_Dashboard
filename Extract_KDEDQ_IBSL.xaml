@@ -97,7 +97,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Extract_KDEDQ_IBSL" sap:VirtualizedContainerService.HintSize="919,3424" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extract_KDEDQ_IBSL" sap:VirtualizedContainerService.HintSize="1084,3424" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_IBSL_KDE" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_KDEDQ_Results" />
@@ -220,7 +220,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Getting KDE DQ Results . . .&quot;]" />
-      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_KDEDQ_Results]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="01_dq_results" WorkbookPath="Downloaded\EDG-DataQualityResults_20260802.xlsx" />
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_KDEDQ_Results]" DisplayName="Read data from an Excel file." sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="01_dq_results" WorkbookPath="Downloaded\EDG-DataQualityResults_20260922_Adhoc.xlsx" />
     </Sequence>
     <Sequence DisplayName="Extract IBSL KDEDQ Results" sap:VirtualizedContainerService.HintSize="486,871" sap2010:WorkflowViewState.IdRef="Sequence_4">
       <sap:WorkflowViewStateService.ViewState>
@@ -261,6 +261,7 @@
             <InArgument x:TypeArguments="x:String">["ElementName"]</InArgument>
             <InArgument x:TypeArguments="x:String">["IDQ_Mapping"]</InArgument>
             <InArgument x:TypeArguments="x:String">["DataField"]</InArgument>
+            <InArgument x:TypeArguments="x:String">["Dimension"]</InArgument>
             <InArgument x:TypeArguments="x:String">["CurrentLevel"]</InArgument>
             <InArgument x:TypeArguments="x:String">["ProductionStatus"]</InArgument>
             <InArgument x:TypeArguments="x:String">["TestedRows"]</InArgument>
